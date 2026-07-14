@@ -9,5 +9,5 @@ class Package(Base):
     weight = Column(Float,nullable=False)
     warehouse_id = Column(Integer,ForeignKey("warehouses.id"))
     warehouse = relationship("Warehouse",back_populates="packages")
-    waybill = relationship("Waybill",back_populates="package")
+    waybill = relationship("Waybill",back_populates="package",uselist=False)
     association = relationship("Association",back_populates="packages")
